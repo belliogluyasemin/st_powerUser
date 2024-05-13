@@ -7,3 +7,4 @@ shap == 0.45.0
 scikit-learn ==1.4.2
 datetime == 5.5
 db_dtypes
+xgboost ==2.0.3
