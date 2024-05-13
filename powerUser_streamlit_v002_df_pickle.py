@@ -208,7 +208,13 @@ if st.sidebar.button("Submit"):
     """)
 
     # SHAP waterfall plot
-    shap.initjs()
+    try:
+        import IPython
+    except ImportError:
+        st.error("IPython is not installed. Please install it by adding 'ipython' to your requirements.txt file.")
+    else:
+        shap.initjs()
+  
     fig, ax = plt.subplots(figsize=(15, 8))
     shap.plots.waterfall(shap_values_class[-1], show=False)
     st.pyplot(fig)

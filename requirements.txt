@@ -8,3 +8,4 @@ scikit-learn ==1.4.2
 datetime == 5.5
 db_dtypes
 xgboost ==2.0.3
+ipython
