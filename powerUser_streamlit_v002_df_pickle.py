@@ -33,32 +33,38 @@ st.subheader("About Data")
 st.markdown("""
  [Google Merchandise Store](https://shop.merch.google/) is an online store that sells Google-branded merchandise. The site uses Google Analytics 4's standard web ecommerce implementation along with enhanced measurement. The ga4_obfuscated_sample_ecommerce dataset available through the [BigQuery Public Datasets](https://console.cloud.google.com/bigquery) program contains a sample of obfuscated BigQuery event export data for three months from 2020-11-01 to 2021-01-31.
 """)
-st.header("Data From BigQuery as df")
+st.header("Dataset From BigQuery ")
 st.write(df.head(30))
 st.header("Feature's")
 st.markdown("""
-
-- **sessionCnt**: The number of sessions conducted by a user within a specified period.
-- **sessionDate**: The dates when the user started a session.
-- **itemBrandCount**: The number of different brands viewed by users within a specified period.
-- **itemCatCount**: The number of different product categories viewed by users.
-- **viewPromotion**: The number of times promotions were viewed.
-- **selectPromotion**: The number of promotions selected by users.
-- **itemViewCnt**: The number of times products were viewed.
-- **itemSelectCnt**: The number of times products were selected.
-- **paymetInfoAdd**: The number of times payment information was added.
-- **shippingInfoAdd**: The number of times shipping information was added.
-- **ScrollpageLocationCnt**: The count of unique page locations where users performed a scroll action.
-- **ScrollpageTitleCnt**: The count of unique page titles where users performed a scroll action.
-- **pageViewPageLocationCnt**: The number of visits to different page locations.
-- **pageViewPageTitleCnt**: The number of visits to different page titles.
-- **addToCarts**: The number of times products were added to the cart.
-- **checkOut**: The number of times users initiated the checkout process.
-- **ecommercePurchases**: The number of purchase transactions made through the e-commerce platform.
-- **purchaseToViewRate**: The purchase rate relative to product views (expressed as a percentage).
-- **itemPurchaseName**: The number of distinct product names purchased.
-- **itemPurchaseQuantity**: The total quantity of products purchased.
-- ***itemRevenue15***: Revenue from products calculated using a different method.
+- **Medium** : The channel through which the user reached the website (e.g., organic, direct, cpc, referral).
+- **mobile_brand_name** : The brand name of the user's device (e.g., Samsung, Apple).  
+- **country** : The country where the user is located. 
+- **category** : The category of the user's device (e.g., mobile, desktop).                    
+- **sessionCnt**: The number of sessions the user had within the first 15 days.
+- **sessionDate**: The number of distinct days the user started a session within the first 15 days.
+- **itemBrandCount**:  The number of different product brands the user interacted with within the first 15 days.
+- **itemCatCount**: The number of different product categories the user interacted with within the first 15 days.
+- **viewPromotion**: The number of promotions viewed by the user within the first 15 days.
+- **selectPromotion**: The number of promotions selected by the user within the first 15 days.
+- **itemViewCnt**: The number of different product names viewed by the user within the first 15 days.
+- **itemSelectCnt**: The number of different product names selected by the user within the first 15 days.
+- **paymetInfoAdd**: The number of times the user added payment information within the first 15 days.
+- **shippingInfoAdd**: The number of times the user added shipping information within the first 15 days.
+- **ScrollpageLocationCnt**: The number of different page locations scrolled by the user within the first 15 days.
+- **ScrollpageTitleCnt**: The number of different page titles scrolled by the user within the first 15 days.
+- **pageViewPageLocationCnt**: The number of different page locations viewed by the user within the first 15 days.
+- **pageViewPageTitleCnt**: The number of different page titles viewed by the user within the first 15 days.
+- ** itemViews**: The total number of items viewed by the user within the first 15 days.
+- **addToCarts**: The number of times the user added items to the cart within the first 15 days.
+- **addToItemId** : The number of different items added to the cart by the user within the first 15 days.
+- **searchResultViewedCnt**: The number of times the user viewed search results within the first 15 days.
+- **checkOut**: The number of times the user initiated a checkout within the first 15 days.
+- **ecommercePurchases**: The total number of purchases made by the user within the first 15 days.
+- **purchaseToViewRate**: The purchase-to-view rate of the user within the first 15 days.
+- **itemPurchaseName**: The number of different product names purchased by the user within the first 15 days.
+- **itemPurchaseQuantity**: The total quantity of items purchased by the user within the first 15 days.
+- ***itemRevenue15***: The total revenue generated by the user within the first 15 days.
 """)
 
 ##Side Bar
@@ -212,7 +218,7 @@ if st.sidebar.button("Submit"):
 
     st.header("SHAP Local Waterfall Plot")
     st.markdown("""
-        The SHAP waterfall plot below visualizes the impact of each feature on the model's prediction for the specific instance provided.
+        The SHAP waterfall plot below visualizes the impact of each feature on the Classification model's prediction for the specific instance provided.
     """)
 
     # SHAP waterfall plot
