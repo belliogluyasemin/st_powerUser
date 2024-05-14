@@ -167,7 +167,7 @@ prob_class = np.round(xgb_adasyn_model.predict_proba(test_df_c),2)
 
 
 st.header("Results")
-
+st.markdown("When you enter the data on the left side, resuls will be listed below.")
 # Sonuç Ekranı
 if st.sidebar.button("Submit"):
 
