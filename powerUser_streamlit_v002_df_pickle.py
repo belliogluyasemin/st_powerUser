@@ -65,10 +65,18 @@ st.markdown("""
 
 st.sidebar.markdown("**Enter & Select  User Metric Below**")
 
-medium = st.sidebar.text_input("Write Medium :",help = 'organic, (none) ,cpc, referal, <Other> ,(data delted)')
-mobile_brand_name = st.sidebar.text_input("Write Mobile Brand Name :",help = 'Samsung, Microsoft ,Google, Apple, <Other> etc')
-country = st.sidebar.text_input('Country :', help= "United States, Canada, Germany, India, France, Taiwan,Italy, Japan,Spain, China, Singapore, South Korea, Netherlands, Turkey")
-category = st.sidebar.text_input("Write Category :",help = 'mobile, desktop, tablet')
+medium_options = ['organic', '(none)', 'cpc', 'referral', '<Other>', '(data deleted)']
+medium = st.sidebar.selectbox("Select Medium:", medium_options, help='organic, (none), cpc, referral, <Other>, (data deleted)')
+
+mobile_brand_options = ['Samsung', 'Microsoft', 'Google', 'Apple', '<Other>']
+mobile_brand_name = st.sidebar.selectbox("Select Mobile Brand Name:", mobile_brand_options, help='Samsung, Microsoft, Google, Apple, <Other>')
+
+country_options = ['United States', 'Canada', 'Germany', 'India', 'France', 'Taiwan', 'Italy', 'Japan', 'Spain', 'China', 'Singapore', 'South Korea', 'Netherlands', 'Turkey']
+country = st.sidebar.selectbox("Select Country:", country_options, help='United States, Canada, Germany, India, France, Taiwan, Italy, Japan, Spain, China, Singapore, South Korea, Netherlands, Turkey')
+
+category_options = ['mobile', 'desktop', 'tablet']
+category = st.sidebar.selectbox("Select Category:", category_options, help='mobile, desktop, tablet')
+
 sessionCnt = st.sidebar.number_input("First 15 Day Session Count", min_value=0 , step=1)
 sessionDate = st.sidebar.number_input("First 15 Day Session Date", min_value=0 , step=1)
 itemBrandCount = st.sidebar.number_input("First 15 Day Diffirent Item Brands", min_value=0 , step=1)
