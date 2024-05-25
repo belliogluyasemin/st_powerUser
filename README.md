@@ -24,7 +24,7 @@ The dataset used in this project includes user transaction data and various feat
 
 ### LTV Prediction
 
-We used Random Forest Regressor for predicting LTV. After hyperparameter optimization, the R2 score increased to 83%.
+We used Random Forest Regressor for predicting LTV. After hyperparameter optimization.
 
 ### Power User Prediction
 
